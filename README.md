@@ -1,7 +1,7 @@
-efis-pure-bootstrap
+efis-pure-intro
 =====================================
 
-efis-pure-bootstrap是基于efis-pure的bootstrap应用示例。
+efis-pure-intro是基于efis-pure的应用示例，也是一个介绍页面。
 
 ## 安装efis-pure
 
@@ -9,26 +9,26 @@ efis-pure-bootstrap是基于efis-pure的bootstrap应用示例。
 npm install -g efis-pure
 ```
 
-安装成功后执行 ``pure -h`` 即可看到相关开发命令帮助
+安装成功后执行 ``efis -h`` 即可看到相关开发命令帮助
 
 ## 让代码跑起来！
 
 首先，启动内置的调试服务器：
 
 ```bash
-pure server start
+efis server start
 ```
 
 此时fis会启动一个精巧的jetty服务器，并且打开浏览器访问了 http://127.0.0.1:8080 ，现在这个调试环境什么也没有，接下来，我们在命令行下cd到我们下载的样例项目中：
 
 ```bash
-cd efis-pure-bootstrap
+cd efis-pure-intro
 ```
 
 第三步，执行fis的编译命令：
 
 ```bash
-pure release
+efis release
 ```
 
 第四步，刷新浏览器，查看我们的项目。
@@ -40,7 +40,7 @@ pure release
 虽然目前项目可以正常运行，但是这种加载方式会造成连接数过多，让我们调整参数，对资源进行自动合并
 
 ```bash
-pure release -p
+efis release -p
 ```
 
 再次浏览页面，我们可以发现原有的大量静态资源已经自动合并。
