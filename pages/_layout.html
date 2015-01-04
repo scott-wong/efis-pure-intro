@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 360浏览器极速模式  -->
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    <!-- Bootstrap core CSS -->
+    <link data-fixed='true' href="/static/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/static/html5shiv/html5shiv.js"></script>
+    <script src="/static/respond/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" href="/static/favicon.ico">
+    <link rel="icon" href="/static/favicon.ico">
+    <script src="/static/mod/mod.js"></script>
+    <script src="/static/jquery/jquery.js"></script>
+    {% block head %}{% endblock %}
+</head>
+
+<body>
+    <link rel="import" href="/modules/ui/header/header.html?__inline">
+    {% block content %}{% endblock %}
+
+    <link rel="import" href="/modules/ui/footer/footer.html?__inline">
+
+</body>
+
+</html>

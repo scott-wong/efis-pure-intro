@@ -1,0 +1,121 @@
+{% extends '../_layout.html' %} {% block head %}
+<meta name="description" content="eKing Front-end Integrated Solution">
+<meta name="keywords" content="HTML, CSS, JS, JavaScript, framework, bootstrap, front-end, frontend, web development">
+<meta name="author" content="王宇<wang_yu5@hnair.com>">
+<title>EFIS - eKing Front-end Integrated Solution</title>
+
+<!--[if lt IE 9]>
+<script src="/modules/docs/ie8-responsive-file-warning.js"></script>
+<![endif]-->
+{% endblock %} {% block content %}
+
+<div class="bs-docs-header" id="content">
+    <div class="container">
+        <h1>起步
+        </h1>
+        <p>简要介绍 EFIS(eKing Front-end Integrated Solution)，以及如何下载、使用，等等。</p>
+    </div>
+</div>
+<div class="container bs-docs-container">
+    <div class="row">
+        <div class="col-md-9" role="main">
+            <div class="bs-docs-section">
+                <h1 id="overview" class="page-header">概览</h1>
+                <h3>什么是EFIS？</h3>
+                <p>EFIS是基于<a href="http://fis.baidu.com" target="_blank">FIS</a>结合易建科技项目业务特点，专为解决前端开发中自动化工具、性能优化、模块化框架、开发规范、代码部署、开发流程等问题的工具框架和方案。</p>
+                <p>FIS支持 纯前端、php、java、go等架构，EFIS目前定制了纯前端的构建工具<a href="https://github.com/scott-wong/efis-pure" target="_blank">efis-pure</a>. 前后端分离，能够满足大部分项目需要。</p>
+                <p><img src="https://badge.fury.io/js/efis-pure.png">
+                    <img src="https://david-dm.org/scott-wong/efis-pure.png">
+                </p>
+                <hr>
+                <h3 id="solution">方案选型</h3>
+                <p>经过对比评测，我们推荐成熟的 <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a>(依赖jQuery)作为基础HTML、CSS 和 JS 框架，开发人员可以基于jQuery和Bootstrap快速开发Web项目。</p>
+                <p>同时推荐使用国产MVVM框架 <a href="http://rubylouvre.github.io/mvvm/" target="_blank">avalon</a>(<a href="http://www.html-js.com/article/column/234" target="_blank">学习教程</a>)，告别繁琐地操作DOM，只需更新数据即可完成渲染刷新。该框架结合了KnockoutJS和AngularJS等框架的优点，入门相对容易,学习成本低。</p>
+                <p><a href="http://www.cnblogs.com/rubylouvre/p/4012709.html" target="_blank">avalon常见问题</a></p>
+                <div class="bs-callout bs-callout-danger">
+                    <h4>EFIS是灵活开放的框架，你可以集成其他框架构建你的Web项目。</h4>
+                </div>
+                <div class="bs-callout bs-callout-danger">
+                    <h4>Bootstrap对IE6/7不支持，如项目需要，请自行实现兼容。</h4>
+                </div>
+                <hr>
+                <h3 id="install">安装efis-pure</h3>
+                <ol>
+                    <li>安装 node&npm (<a href="http://nodejs.org" target="_blank">node.js</a> or <code>\\10.20.140.61\dev tools\fis</code>).</li>
+                    <li>安装 efis-pure自动化构建工具
+                        <div class="highlight"><pre><code>$ npm config set registry=http://registry.npm.taobao.org
+                        <br>$ npm install efis-pure -g</code></pre>
+                        </div>
+                    </li>
+                    <li>下载 efis-demo
+                        <div class="highlight"><pre><code>\\10.20.140.61\dev tools\fis</code></pre>
+                        </div>
+                    </li>
+                </ol>
+                <p>更多文档请访问 <a href="https://github.com/scott-wong/efis-pure" target="_blank">efis-pure</a>和<a href="http://fis.baidu.com" target="_blank">fis</a>.</p>
+                <hr>
+                <h3 id="demo">运行 efis-demo</h3>
+                <ol>
+                    <li>安装<a href="http://java.com" target="_blank">Java运行环境</a>
+                    </li>
+                    <li>进入demo目录<code>x:\efis-demo</code>，启动内置web服务器
+                        <div class="highlight">
+                            <pre><code>$ efis server start</code></pre>
+                        </div>
+                    </li>
+                    <li>发布项目
+                        <div class="highlight">
+                            开发时：发布同时监听文件修改，自动刷新页面。
+                            <pre><code>$ efis release -wL </code></pre>
+                        </div>
+                        <div class="highlight">
+                            发布到服务器时：c:清空缓存，o:压缩，p:合并打包，m:MD5戳，d:指定发布目录。
+                            <pre><code>$ efis release -copmd d:/release </code></pre>
+                        </div>
+                    </li>
+                </ol>
+                <hr>
+                <h3 id="code-guide">前端开发规范</h3>
+                点击<a href="http://wangyu.in/code-guide/" target="_blank">前端开发规范</a>
+                <hr>
+                <h3 id="mock">mock-service</h3>
+                 <a href="https://github.com/scott-wong/mock-service" target="_blank">mock-service</a>提供在线存储和生成模拟数据的服务。
+                <hr>
+                <h3 id="structure">目录规范</h3>
+                <img src="../../modules/getting-started/structure.png">
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="bs-docs-sidebar hidden-print hidden-xs hidden-sm" role="complementary">
+                <ul class="nav bs-docs-sidenav">
+                    <li>
+                        <a href="#overview">什么是EFIS？</a>
+                    </li>
+                    <li>
+                        <a href="#solution">方案选型</a>
+                    </li>
+                    <li>
+                        <a href="#install">安装efis-pure</a>
+                    </li>
+                    <li>
+                        <a href="#demo">运行efis-demo</a>
+                    </li>
+                    <li>
+                        <a href="#code-guide">前端开发规范</a>
+                    </li>
+                    <li>
+                        <a href="#mock">模拟数据</a>
+                    </li>
+                    <li>
+                        <a href="#structure">目录规范</a>
+                    </li>
+                </ul>
+                <a class="back-to-top" href="#top">返回顶部</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+require('getting-started');
+</script>
+{% endblock %}

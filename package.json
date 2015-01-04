@@ -1,0 +1,13 @@
+{
+    "name": "efis-pure-intro",
+    "version": "0.0.1",
+    "description": "a quick start for efis-pure",
+    "keywords": [
+        "fis",
+        "efis",
+        "intro",
+        "pure"
+    ],
+    "repository": "https://github.com/scott-wong/efis-pure-intro",
+    "license": "BSD"
+}
