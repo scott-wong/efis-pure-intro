@@ -1,7 +1,7 @@
 efis-pure-intro
 =====================================
 
-efis-pure-intro是基于efis-pure的应用示例，也是一个介绍页面。
+efis-pure-intro是基于efis-pure的介绍页面，也是一个应用示例。
 
 ## 安装efis-pure
 
@@ -16,7 +16,7 @@ npm install -g efis-pure
 首先，启动内置的调试服务器：
 
 ```bash
-efis server start
+efis server start --type node
 ```
 
 此时fis会启动一个精巧的jetty服务器，并且打开浏览器访问了 http://127.0.0.1:8080 ，现在这个调试环境什么也没有，接下来，我们在命令行下cd到我们下载的样例项目中：
@@ -28,7 +28,7 @@ cd efis-pure-intro
 第三步，执行fis的编译命令：
 
 ```bash
-efis release
+efis release -wL
 ```
 
 第四步，刷新浏览器，查看我们的项目。

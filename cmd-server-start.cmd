@@ -1,0 +1,1 @@
+efis server start --type node

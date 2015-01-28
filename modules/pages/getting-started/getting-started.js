@@ -1,5 +1,5 @@
 
-require('ui/base');
+require('base');
 require('ui/header')(0);
 
 require('docs');

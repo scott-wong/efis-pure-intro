@@ -1,9 +1,9 @@
 /**
  * file: mod.js
- * ver: 1.0.7
- * update: 2014/4/14
+ * ver: 1.0.9
+ * update: 2015/01/12
  *
- * https://github.com/zjcqoo/mod
+ * https://github.com/fex-team/mod
  */
 var require, define;
 
@@ -87,6 +87,12 @@ var require, define;
     };
 
     require = function(id) {
+
+        // compatible with require([dep, dep2...]) syntax.
+        if (id && id.splice) {
+            return require.async.apply(this, arguments);
+        }
+
         id = require.alias(id);
 
         var mod = modulesMap[id];
@@ -123,7 +129,7 @@ var require, define;
         if (typeof names == 'string') {
             names = [names];
         }
-        
+
         for(var i = 0, n = names.length; i < n; i++) {
             names[i] = require.alias(names[i]);
         }
@@ -137,7 +143,17 @@ var require, define;
                 // skip loading or loaded
                 //
                 var dep = depArr[i];
-                if (dep in factoryMap || dep in needMap) {
+
+                if (dep in factoryMap){
+                    // check whether loaded resource's deps is loaded or not
+                    var child = resMap[dep];
+                    if (child && 'deps' in child) {
+                        findNeed(child.deps);
+                    }
+                    continue;
+                }
+
+                if (dep in needMap) {
                     continue;
                 }
 
@@ -162,7 +178,7 @@ var require, define;
                 onload && onload.apply(global, args);
             }
         }
-        
+
         findNeed(names);
         updateNeed();
     };
@@ -194,7 +210,7 @@ var require, define;
         if (cfg.content) {
             var sty = document.createElement('style');
             sty.type = 'text/css';
-            
+
             if (sty.styleSheet) {       // IE
                 sty.styleSheet.cssText = cfg.content;
             } else {
@@ -213,7 +229,7 @@ var require, define;
 
 
     require.alias = function(id) {return id};
-    define.amd={jQuery:!0,version:"1.0.7"};
+
     require.timeout = 5000;
-    
+
 })(this);

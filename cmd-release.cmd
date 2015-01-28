@@ -1,0 +1,1 @@
+efis release -copmd ../release
